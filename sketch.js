@@ -12,7 +12,7 @@ var gameOver, restart;
 function preload() {
   // jumpSound = loadSound("assets/sounds/jump.wav")
   // collidedSound = loadSound("assets/sounds/collided.wav")
-  backgroundImg = loadImage("assets/backgroundImg.png")
+  //backgroundImg = loadImage("assets/backgroundImg.png")
   sunAnimation = loadImage("assets/sun.png");
   trex_running = loadAnimation("assets/trex_2.png", "assets/trex_1.png", "assets/trex_3.png");
   trex_collided = loadAnimation("assets/trex_collided.png");
@@ -57,7 +57,8 @@ function setup() {
 }
 function draw() {
   //trex.debug = true;
-  background(backgroundImg);
+  //background(backgroundImg);
+  background("grey");
   textSize(20);
   fill("black")
   text("Score: " + score, 30, 50);
@@ -108,9 +109,8 @@ function draw() {
 }
 function spawnClouds() {
   //write code here to spawn the clouds
-  var cloud_flag = Math.random(120, 240)
-  //if (frameCount % 60 === 0) {
-    if (cloud_flag % 60 === 0) {
+  
+  if (frameCount % 60 === 0) {
     var cloud = createSprite(width + 20, height - 300, 40, 10);
     cloud.y = Math.round(random(100, 220));
     cloud.addImage(cloudImage);
@@ -126,8 +126,7 @@ function spawnClouds() {
   }
 }
 function spawnObstacles() {
-  var obst_flag = Math.random(120, 240)
-  if (obst_flag % 60 === 0) {
+  if (frameCount % 60 === 0) {
     var obstacle = createSprite(600, height - 95, 20, 30);
     obstacle.setCollider('circle', 0, 0, 45)
     // obstacle.debug = true
