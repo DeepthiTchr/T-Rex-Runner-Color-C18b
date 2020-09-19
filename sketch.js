@@ -29,8 +29,8 @@ function preload() {
   restartImg = loadImage("assets/restart.png");
 }
 function setup() {
-  //createCanvas(windowWidth, windowHeight);
-  createCanvas(w, h);
+  createCanvas(windowWidth, windowHeight);
+  //createCanvas(w, h);
   //createCanvas(document.body.clientWidth, document.body.clientHeight);
   //createCanvas(displayWidth, displayHeight);
   sun = createSprite(width - 50, 100, 10, 10);
@@ -164,8 +164,8 @@ function reset() {
   trex.changeAnimation("running", trex_running);
   score = 0;
 }
-function windowResized() {
-  //resizeCanvas(windowWidth, windowHeight);
-  //resizeCanvas(displayWidth, displayHeight)
-  resizeCanvas(w, h)
-}
+// function windowResized() {
+//   //resizeCanvas(windowWidth, windowHeight);
+//   //resizeCanvas(displayWidth, displayHeight)
+//   resizeCanvas(w, h)
+// }
