@@ -108,7 +108,9 @@ function draw() {
 }
 function spawnClouds() {
   //write code here to spawn the clouds
-  if (frameCount % 60 === 0) {
+  var cloud_flag = Math.random(120, 240)
+  //if (frameCount % 60 === 0) {
+    if (cloud_flag % 60 === 0) {
     var cloud = createSprite(width + 20, height - 300, 40, 10);
     cloud.y = Math.round(random(100, 220));
     cloud.addImage(cloudImage);
@@ -124,7 +126,8 @@ function spawnClouds() {
   }
 }
 function spawnObstacles() {
-  if (frameCount % 60 === 0) {
+  var obst_flag = Math.random(120, 240)
+  if (obst_flag % 60 === 0) {
     var obstacle = createSprite(600, height - 95, 20, 30);
     obstacle.setCollider('circle', 0, 0, 45)
     // obstacle.debug = true
