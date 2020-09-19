@@ -9,6 +9,9 @@ var backgroundImg
 var score = 0;
 var jumpSound, collidedSound;
 var gameOver, restart;
+var ratio = window.devicePixelRatio || 1; 
+var w = screen.width * ratio; 
+var h = screen.height * ratio;
 function preload() {
   jumpSound = loadSound("assets/sounds/jump.wav")
   collidedSound = loadSound("assets/sounds/collided.wav")
@@ -26,7 +29,8 @@ function preload() {
   restartImg = loadImage("assets/restart.png");
 }
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  //createCanvas(windowWidth, windowHeight);
+  createCanvas(w, h);
   //createCanvas(document.body.clientWidth, document.body.clientHeight);
   //createCanvas(displayWidth, displayHeight);
   sun = createSprite(width - 50, 100, 10, 10);
