@@ -62,7 +62,8 @@ function draw() {
   fill("black")
   text("Score: " + score, 30, 50);
   if (gameState === PLAY) {
-    score = score + Math.round(getFrameRate() / 60);
+    //score = score + Math.round(getFrameRate() / 60);
+    score = score + 5;
     ground.velocityX = -(6 + 3 * score / 100);
     //if (touches.length > 0 && trex.y >= height - 120) {
       if (touches.length > 0) {
