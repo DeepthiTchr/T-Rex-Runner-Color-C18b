@@ -164,7 +164,8 @@ function reset() {
   trex.changeAnimation("running", trex_running);
   score = 0;
 }
-// function windowResized() {
-//   //resizeCanvas(windowWidth, windowHeight);
-//   resizeCanvas(displayWidth, displayHeight)
-// }
+function windowResized() {
+  //resizeCanvas(windowWidth, windowHeight);
+  //resizeCanvas(displayWidth, displayHeight)
+  resizeCanvas(w, h)
+}
