@@ -26,8 +26,8 @@ function preload() {
   restartImg = loadImage("assets/restart.png");
 }
 function setup() {
-  //createCanvas(windowWidth, windowHeight);
-  createCanvas(displayWidth, displayHeight);
+  createCanvas(windowWidth, windowHeight);
+  //createCanvas(displayWidth, displayHeight);
   sun = createSprite(width - 50, 100, 10, 10);
   sun.addAnimation("sun", sunAnimation);
   sun.scale = 0.1
@@ -160,6 +160,6 @@ function reset() {
   score = 0;
 }
 function windowResized() {
-  //resizeCanvas(windowWidth, windowHeight);
-  resizeCanvas(displayWidth, displayHeight)
+  resizeCanvas(windowWidth, windowHeight);
+  //resizeCanvas(displayWidth, displayHeight)
 }
