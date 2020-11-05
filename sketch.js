@@ -9,8 +9,8 @@ var backgroundImg
 var score = 0;
 var jumpSound, collidedSound;
 var gameOver, restart;
-var ratio = window.devicePixelRatio || 1; 
-var w = screen.width * ratio; 
+var ratio = window.devicePixelRatio || 1;
+var w = screen.width * ratio;
 var h = screen.height * ratio;
 function preload() {
   jumpSound = loadSound("assets/sounds/jump.wav")
@@ -73,7 +73,7 @@ function draw() {
     //score = score + 5;
     ground.velocityX = -(6 + 3 * score / 100);
     if (touches.length > 0 && trex.y >= height - 120) {
-    //  if (touches.length > 0) {
+      //  if (touches.length > 0) {
       jumpSound.play()
       trex.velocityY = -10;
       touches = [];
@@ -104,8 +104,10 @@ function draw() {
     obstaclesGroup.setLifetimeEach(-1);
     cloudsGroup.setLifetimeEach(-1);
     if (touches.length > 0) {
-      reset();
-      touches = []
+      if (restart.overlapPoint(touches[0].x, touches[0].y)) {
+        reset();
+        touches = []
+      }
     }
     if (mousePressedOver(restart)) {
       reset();
@@ -115,7 +117,6 @@ function draw() {
 }
 function spawnClouds() {
   //write code here to spawn the clouds
-  
   if (frameCount % 60 === 0) {
     var cloud = createSprite(width + 20, height - 300, 40, 10);
     cloud.y = Math.round(random(100, 220));
